@@ -5,11 +5,13 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <Navbar />
-      <div className='flex'>
-        <div className='hidden md:block h-[100vh] w-[300px]'>
+      <div className="flex h-screen">
+        {/* Sidebar */}
+        <div className="hidden md:block h-full w-[300px]">
           <Sidebar />
         </div>
-        <div className='p-5 w-full md:max-w-[1140px]'>{children}</div>
+        {/* Content Area */}
+        <div className="flex-1 p-5 overflow-auto">{children}</div>
       </div>
     </>
   );
